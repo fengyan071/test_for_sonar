@@ -9,7 +9,7 @@ provider "kubernetes" {
   client_certificate     = module.ali_k8s.client_cert
   insecure               =True
   client_key             = module.ali_k8s.client_key
-
+}
 
 provider "helm" {
   kubernetes {
@@ -30,8 +30,9 @@ resource "alicloud_db_connection" "public_endpoint" {
 
 # K8s API access control list
 module "slb-acl-k8s-api" {
-  # TODO
-  # test todo
+# test for scan  
+# TODO   
+
   password = "123"
   source            = "../terraform-modules/modules/ali_acl"
   name_prefix       = "${var.project_name}-${local.env}-api-k8s-slb"

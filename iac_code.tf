@@ -7,9 +7,9 @@ terraform {
 provider "kubernetes" {
   host                   = local.k8s_api_server_fqdn_w_port
   client_certificate     = module.ali_k8s.client_cert
-  insecure               = true
+  insecure               =True
   client_key             = module.ali_k8s.client_key
-}
+
 
 provider "helm" {
   kubernetes {
